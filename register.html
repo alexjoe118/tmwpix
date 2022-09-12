@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <title>TMWPIX</title>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="TMWPIX" name="description" />
+    <meta content="" name="keywords" />
+    <meta content="" name="author" />
+    <!-- CSS Files
+    ================================================== -->
+    <link id="bootstrap" href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="register_body">
+    <div class="min-vh-100 d-flex flex-column justify-content-center align-items-center py-5" id="login_container">
+        <img src="./img/logotmwpix.png" width="200" height="50" class="logo-img">
+
+        <div class="d-flex flex-column register_wizard" id="profile_info">
+            <input id="nome" class="custom_input" placeholder="Nome">
+            <input id="cpf" class="custom_input" placeholder="CPF">
+            <input id="rg" class="custom_input" placeholder="RG">
+            <input id="dataNasc" class="custom_input" placeholder="Data de Nascimento">
+            <button class="custom_button" onclick="window.history.back()">Anterior</button>
+            <button class="custom_button" onclick="showTab(1)">Próximo</button>
+        </div>
+        <div class="d-flex flex-column register_wizard" id="address_info">
+            <input id="rua" class="custom_input" placeholder="Rua, Av.">
+            <input id="numero" class="custom_input" placeholder="Número">
+            <input id="bairro" class="custom_input" placeholder="Bairro">
+            <input id="cep" class="custom_input" placeholder="Cep">
+            <input id="cidade" class="custom_input" placeholder="Cidade">
+            <input id="estado" class="custom_input" placeholder="UF">
+            <button class="custom_button" onclick="showTab(0)">Anterior</button>
+            <button class="custom_button" onclick="showTab(2)">Próximo</button>
+        </div>
+        <div class="d-flex flex-column register_wizard" id="plano_info">
+            <input id="plano" class="custom_input" placeholder="Plano">
+
+            <button class="custom_button" onclick="showTab(1)">Anterior</button>
+            <button class="custom_button" onclick="showTab(3)">Próximo</button>
+        </div>
+        <div class="d-flex flex-column register_wizard" id="profile_email">
+            <input id="email" class="custom_input" placeholder="E-Mail">
+            <input id="senha" type="password" class="custom_input" placeholder="Senha">
+
+            <button class="custom_button" onclick="showTab(2)">Anterior</button>
+            <button class="custom_button" onclick="gotoLogin()">Cadastrar</button>
+        </div>
+    </div>
+
+    <!-- Javascript Files
+    ================================================== -->
+    <script src="js/plugins.js"></script>
+    <script>
+        var currentTab = 0; // Current tab is set to be the first tab (0)
+        showTab(currentTab); // Display the current tab
+
+        function showTab(n) {
+            $('.register_wizard').removeClass('d-block');
+            $('.register_wizard').addClass('d-none');
+
+            $('.register_wizard').eq(n).removeClass('d-none')
+            $('.register_wizard').eq(n).addClass('d-block')
+        }
+        // console.log(new Date);
+
+
+        function gotoLogin() {
+            var link = "https://api.tmwpix.com/cliente/cadastro";
+            const nome = $('nome').val();
+            const cpf = $('cpf').val();
+            const rg = $('rg').val();
+            const dataNasc = $('dataNasc').val();
+            const email = $('email').val();
+            const rua = $('rua').val();
+            const numero = $('numero').val();
+            const bairro = $('bairro').val();
+            const cep = $('cep').val();
+            const cidade = $('cidade').val();
+            const plano = $('plano').val();
+            const estado = $('estado').val();
+            // const creditNumber = $('creditNumber').val();
+            // const creditMonth = $('creditMonth').val();
+            // const creditYear = $('creditYear').val();
+            // const cvv = $('cvv').val();
+            const creditNumber = "000000";
+            const creditMonth = Date.now();
+            const creditYear = Date.now();
+            const cvv = "";
+
+
+
+            $.ajax({
+                url: link,
+                type: 'POST',
+                data: {
+                    nome,
+                    cpf,
+                    rg,
+                    dataNasc,
+                    email,
+                    rua,
+                    numero,
+                    bairro,
+                    cep,
+                    cidade,
+                    plano,
+                    estado,
+                    creditNumber,
+                    creditMonth,
+                    creditYear,
+                    cvv,
+                },
+                dataType: 'json',
+
+                success: function (result) {
+                    if (result.hasOwnProperty('error')) {
+                        alert(result['error']['message']);
+                    } else {
+                        console.log(JSON.stringify(result));
+                        alert(result);
+                    }
+                },
+                error: function (xhr, status, error) {
+                    alert(`Error ${error}`);
+                },
+
+            });
+            window.location.href = "./login.html";
+        }
+
+    </script>
+</body>
+
+</html>

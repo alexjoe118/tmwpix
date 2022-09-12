@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <title>TMWPIX</title>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="TMWPIX" name="description" />
+    <meta content="" name="keywords" />
+    <meta content="" name="author" />
+    <!-- CSS Files
+    ================================================== -->
+    <link id="bootstrap" href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link id="font" href="fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div id="profile-remove-container" class="px-1 py-4">
+        <!-- header begin -->
+        <header class="">
+            <div class="p-3 d-flex justify-content-between align-items-center">
+                <a href="#" onclick="window.history.back()" class="back_btn"><i class="fa fa-3x fa-angle-left"></i></a>
+                <a href="#">
+                    <img src="./img/logotmwpix.png" width="200" height="50" class="logo-img">
+                </a>
+            </div>
+        </header>
+        <!-- header close -->
+        <!-- content begin -->
+        <div id="profile-remove-content">
+            <div class="title mt-4"> Selecionar Perfil </div>
+            <div class="profiles-grid d-flex flex-wrap justify-content-center mt-4 w-100">
+                <!-- <div class="d-flex flex-column justify-content-center align-items-center position-relative profile-view active" onclick="password()">
+                    <img src="./img/perfil.png" width="120" height="120" class="profile-img rounded-circle">
+                    <i class="fa fa-remove"></i>
+                    <div class="profile_name">Sahn</div>
+                </div>
+                <div class="d-flex flex-column justify-content-center align-items-center position-relative profile-view" onclick="password()">
+                    <img src="./img/perfil.png" width="120" height="120" class="profile-img rounded-circle">
+                    <i class="fa fa-remove"></i>
+                    <div class="profile_name">Sh</div>
+                </div>
+                <div class="d-flex flex-column justify-content-center align-items-center position-relative profile-view" onclick="password()">
+                    <img src="./img/perfil.png" width="120" height="120" class="profile-img rounded-circle">
+                    <i class="fa fa-remove"></i>
+                    <div class="profile_name">Dinesh</div>
+                </div>
+                <div class="d-flex flex-column justify-content-center align-items-center position-relative profile-view" onclick="password()">
+                    <img src="./img/perfil.png" width="120" height="120" class="profile-img rounded-circle">
+                    <i class="fa fa-remove"></i>
+                    <div class="profile_name">Kh</div>
+                </div> -->
+            </div>
+            <div class="w-100 mt-3 d-flex align-items-center justify-content-center">
+                <button class="profile-btn">Concluído</button>
+            </div>
+        </div>
+        <div class="modal fade" id="password_modal" tabindex="-1" aria-labelledby="Password" aria-hidden="true">
+            <div class="modal-dialog custom_modal">
+                <div class="modal-content">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="text-white">Confirmação de acesso</div>
+                        <div class="close_modal" data-bs-dismiss="modal" aria-label="Close" onclick="closepassword()">X
+                            Fechar</div>
+                    </div>
+                    <div class="fw-bold text-start w-100 text-white">
+                        Digite a senha deste perfil:
+                    </div>
+                    <div class="p-2">
+                        <input type="password" class="text-center w-100" id="password_input" placeholder="SENHA" />
+                    </div>
+
+                    <div class="d-flex justify-content-start mt-2">
+                        <div class="enter_btn" onclick="onPassEnter()">ENTRAR</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Javascript Files
+    ================================================== -->
+    <script src="js/plugins.js"></script>
+    <script src="js/md5.min.js"></script>
+
+    <script>
+        var html = "";
+        var result_object = {};
+        var profileId = -1;
+        var userToken = JSON.parse(window.localStorage.getItem('LOGGED_USR'));
+        if (userToken == null) {
+            window.location.href = "./login.html";
+        }
+        console.log(userToken);
+        link = `http://api.tmwpix.com/profiles?user=${userToken.usr}&time=${userToken.time}&hash=${userToken.hash}&dtoken=${userToken.pass}&os=android&operator=1&tipo=${userToken.loginType}&usrtoken=${userToken.usrtoken}&hashtoken=${userToken.hashtoken}`;
+        $.ajax({
+            url: link,
+            type: 'GET',
+            dataType: 'json',
+            success: function (result) {
+                if (result.hasOwnProperty('error')) {
+                    alert(result['error']['message']);
+                    window.localStorage.removeItem('LOGGED_USR');
+                    window.location.href = "./login.html";
+                } else {
+                    console.log(result);
+                    result_object = result;
+                    for (i = 0; i < result_object['profiles'].length; i++) {
+                        html += "<div class='d-flex flex-column justify-content-center align-items-center position-relative profile-view active' onclick='password(" + i + ")'>"
+                            + "<img src='./img/perfil.png' width='120' height='120' class='profile-img rounded-circle'>"
+                            + "<i class='fa fa-remove'></i>"
+                            + "<div class='profile_name'>" + result_object['profiles'][i].name + "</div></div>";
+                    }
+                    $('.profiles-grid').html(html);
+                }
+            },
+            error: function (xhr, status, error) {
+                alert(`Error ${error}`);
+            },
+        });
+
+        function password(profile_id) {
+            profileId = profile_id;
+            $('#password_input').val("");
+            $("#password_modal").modal('show');
+        }
+
+        function closepassword() {
+            $("#password_modal").modal('hide');
+        }
+
+        function onPassEnter() {
+            var confirmPass = $('#password_input').val();
+            if (md5(confirmPass) == result_object['profiles'][profileId].senha) {
+                console.log(userToken);
+                const link1 = `http://api.tmwpix.com/profiledelete?user=${userToken.usr}&time=${userToken.time}&hash=${userToken.hash}&dtoken=${userToken.pass}&id=${result_object['profiles'][profileId].id}&os=android&operator=1&tipo=${userToken.loginType}&usrtoken=${userToken.usrtoken}&hashtoken=${userToken.hashtoken}`;
+                console.log(link1);
+                $.ajax({
+                    url: link1,
+                    method: 'GET',
+                    dataType: 'json',
+                    success: function (result) {
+                        if (result.hasOwnProperty('error')) {
+                            alert(result['error']['message']);
+                            window.localStorage.removeItem('LOGGED_USR');
+                            window.location.href = "./login.html";
+                        } else {
+                            console.log(result);
+                            result_object = result;
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        alert(`Error ${error}`);
+                    },
+                });
+                window.location.href = './profiles.html';
+            } else {
+                window.location.href = './profiles.html';
+            }
+            $("#password_modal").modal('hide');
+        }
+
+    </script>
+</body>
+
+</html>

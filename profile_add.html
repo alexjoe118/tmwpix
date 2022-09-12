@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <title>TMWPIX</title>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="TMWPIX" name="description" />
+    <meta content="" name="keywords" />
+    <meta content="" name="author" />
+    <!-- CSS Files
+    ================================================== -->
+    <link id="bootstrap" href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link id="font" href="fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div id="profile-add-container" class="px-1 py-4">
+        <!-- header begin -->
+        <header class="">
+            <div class="p-3 d-flex justify-content-between align-items-center">
+                <a href="#" onclick="window.history.back()" class="back_btn"><i class="fa fa-3x fa-angle-left"></i></a>
+                <a href="#">
+                    <img src="./img/logotmwpix.png" width="200" height="50" class="logo-img">
+                </a>
+            </div>
+        </header>
+        <!-- header close -->
+        <!-- content begin -->
+        <div id="profile-add-content">
+            <div class="d-flex flex-column justify-content-center align-items-center">
+                <img src="./img/perfil.png" width="120" height="120" class="mb-3 profile-img rounded-circle">
+                <div class="d-flex flex-column justify-content-between mb-4">
+                    <input id="name" class="profile_input" placeholder="Nome">
+                </div>
+                <div class="d-flex flex-column justify-content-between mb-4">
+                    <select id="adulto" class="profile_input">
+                        <option value="0">Normal</option>
+                        <option value="1">Infantil</option>
+                    </select>
+                </div>
+                <div class="d-flex flex-column justify-content-between mb-4">
+                    <input id="password" type="password" class="profile_input" placeholder="Senha">
+                </div>
+                <div class="d-flex flex-column justify-content-between">
+                    <button class="complete_btn" onclick="onComplete()">Concluir</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Javascript Files
+    ================================================== -->
+    <script src="js/plugins.js"></script>
+    <script src="js/md5.min.js"></script>
+
+    <script>
+        console.log(JSON.parse(window.localStorage.getItem('loginObject')));
+        var userToken = JSON.parse(window.localStorage.getItem('LOGGED_USR'));
+        const link = `http://api.tmwpix.com/profileadd?user=${userToken.usr}&time=${userToken.time}&hash=${userToken.hash}&dtoken=${userToken.pass}&os=android&operator=1&tipo=${userToken.loginType}&usrtoken=${userToken.usrtoken}&hashtoken=${userToken.hashtoken}`;
+        function onComplete() {
+            var profile_name = $('#name').val();
+            var profile_adulto = $('#adulto').val();
+            var profile_password = $('#password').val();
+            if (profile_name != "" && profile_password != "") {
+
+                $.ajax({
+                    url: link,
+                    method: 'POST',
+                    data:{
+                        nome:profile_name,
+                        status: 'ativo',
+                        infantil: parseInt(profile_adulto, 10),
+                        clientes_id: userToken.client_id,
+                        senha: md5(profile_password),
+                    },
+                    dataType: 'json',
+                    success: function (result) {
+                        if (result.hasOwnProperty('error')) {
+                            alert(result['error']['message']);
+                            window.localStorage.removeItem('LOGGED_USR');
+                            window.location.href = "./login.html";
+                        } else {
+                            console.log(result);
+                            window.location.href = "./profiles.html"            
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        alert(`Error ${error}`);
+                    },
+                });
+                // window.location.href = "./profiles.html"
+            }
+        }
+
+    </script>
+</body>
+
+</html>

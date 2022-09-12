@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <title>TMWPIX</title>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="TMWPIX" name="description" />
+    <meta content="" name="keywords" />
+    <meta content="" name="author" />
+    <!-- CSS Files
+    ================================================== -->
+    <link id="bootstrap" href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link id="font" href="fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div id="series-container" class="px-1">
+        <!-- header begin -->
+        <header class="">
+            <div class="p-3 d-flex align-items-center">
+                <div class="back_btn_container d-flex justify-content-start">
+                    <a href="#" onclick="" class="back_btn"><i class="fa fa-3x fa-angle-left"></i></a>
+                </div>
+
+                <div class="d-flex justify-content-center flex-grow-1">
+                    <img src="./img/hamburguer.png" class="series_search_btn" data-bs-toggle="modal"
+                        data-bs-target="#series_search_modal" />
+                </div>
+                <a href="#">
+                    <img src="./img/logotmwpix.png" width="200" height="50" class="logo-img">
+                </a>
+
+            </div>
+        </header>
+        <!-- header close -->
+        <!-- content begin -->
+        <div id="series-content mt-2 px-1">
+            <div class="profiles-grid d-flex flex-wrap w-100">
+                <div class="d-flex flex-column justify-content-center align-items-center film_item loaded">
+                    <a href="#" class="film_favorite"><img src="./img/star.png" class=""></i></a>
+                    <img src="./img/movies/102.jpg" class="film_preview_img" />
+                </div>
+                <div class="d-flex flex-column justify-content-center align-items-center film_item loaded">
+                    <img src="./img/movies/103.jpg" class="film_preview_img" />
+                </div>
+                <div class="d-flex flex-column justify-content-center align-items-center film_item loaded">
+                    <img src="./img/movies/104.jpg" class="film_preview_img" />
+                </div>
+                <div class="d-flex flex-column justify-content-center align-items-center film_item loaded">
+                    <img src="./img/movies/106.jpg" class="film_preview_img" />
+                </div>
+                <div class="d-flex flex-column justify-content-center align-items-center film_item loaded">
+                    <img src="./img/movies/107.jpg" class="film_preview_img" />
+                </div>
+                <div class="d-flex flex-column justify-content-center align-items-center film_item">
+                </div>
+                <div class="d-flex flex-column justify-content-center align-items-center film_item">
+                </div>
+                <div class="d-flex flex-column justify-content-center align-items-center film_item">
+                </div>
+                <div class="d-flex flex-column justify-content-center align-items-center film_item">
+                </div>
+                <div class="d-flex flex-column justify-content-center align-items-center film_item">
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="series_search_modal" tabindex="-1" aria-labelledby="Search series" aria-hidden="true">
+            <div class="modal-dialog custom_modal">
+                <div class="modal-content">
+                    <div class="d-flex justify-content-between">
+                        <div class="text-white">Pesquisar conteúdo</div>
+                        <div class="close_modal" data-bs-dismiss="modal" aria-label="Close">X Fechar</div>
+                    </div>
+                    <div class="category_search_container">
+                        <div class="search_label text-start" id="search_category_label" onclick="select_category()">
+                            Selecionar categoria:&nbsp;<span id="selected_category"></span>
+                        </div>
+                        <div class="category_container collapse" id="category_container">
+                            <div class="category_item">
+                                category 1
+                            </div>
+                            <div class="category_item">
+                                category 2
+                            </div>
+                            <div class="category_item">
+                                category 3
+                            </div>
+                            <div class="category_item">
+                                category 4
+                            </div>
+                            <div class="category_item">
+                                category 5
+                            </div>
+                            <div class="category_item">
+                                category 6
+                            </div>
+                            <div class="category_item">
+                                category 7
+                            </div>
+                        </div>
+                    </div>
+                    <div class="search_title_container">
+                        <div class="search_label text-start" id="search_title_label">
+                            Filtrar por título:&nbsp;<span id="typed_title"></span>
+                        </div>
+                        <div class="search_title_background d-flex justify-content-center align-items-center p-2">
+                            <div class="rounded-1 d-flex align-items-center w-100 py-1 px-2 text-white input_container">
+                                <i class="fa fa-search text-secondary" ></i>
+                                <input class="flex-grow-1 text-center" id="search_title_input" placeholder="Pesquise..."/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="search_button_container d-flex justify-content-end">
+                        <div class="search_button text-white" onclick="">PESQUISAR</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Javascript Files
+    ================================================== -->
+    <script src="js/plugins.js"></script>
+
+    <script>
+        function select_category(){
+            $("#category_container").collapse("toggle");
+        }
+        $('.category_item').click(function(){
+            $("#selected_category").html($(this).html())
+            $("#category_container").collapse("hide");
+        })
+
+        $(".collapse").on('shown.bs.collapse', function(){
+            $("#search_category_label").addClass('open')
+        });
+        $(".collapse").on('hide.bs.collapse', function(){
+            $("#search_category_label").removeClass('open')
+        });
+
+        $("#search_title_input").focus(function(){
+            $("#search_title_label").addClass('open');
+        });
+        $("#search_title_input").focusout(function(){
+            $("#search_title_label").removeClass('open')
+        });
+        $("#search_title_input").change(function(){
+            $("#typed_title").html($(this).val());
+        });
+    </script>
+</body>
+
+</html>

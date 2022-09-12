@@ -1,0 +1,2172 @@
+{
+	"info": {
+		"_postman_id": "b28ce854-f668-4f7e-a871-220e3528bc7a",
+		"name": "tmwpix",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "login",
+			"item": [
+				{
+					"name": "login second time",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://api.tmwpix.com/profiles?user=&time=1657390028215&hash=6b44ce6d55fb47f49a08c4ed436be469&dtoken=d41d8cd98f00b204e9800998ecf8427e&os=android&operator=1&tipo=t&usrtoken=APP123&hashtoken=fc427b261087b109867e42961ca645ce'",
+							"protocol": "http",
+							"host": [
+								"api",
+								"tmwpix",
+								"com"
+							],
+							"path": [
+								"profiles"
+							],
+							"query": [
+								{
+									"key": "user",
+									"value": ""
+								},
+								{
+									"key": "time",
+									"value": "1657390028215"
+								},
+								{
+									"key": "hash",
+									"value": "6b44ce6d55fb47f49a08c4ed436be469"
+								},
+								{
+									"key": "dtoken",
+									"value": "d41d8cd98f00b204e9800998ecf8427e"
+								},
+								{
+									"key": "os",
+									"value": "android"
+								},
+								{
+									"key": "operator",
+									"value": "1"
+								},
+								{
+									"key": "tipo",
+									"value": "t"
+								},
+								{
+									"key": "usrtoken",
+									"value": "APP123"
+								},
+								{
+									"key": "hashtoken",
+									"value": "fc427b261087b109867e42961ca645ce'"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login first time",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://api.tmwpix.com/profiles?user=&time=1657435701486&hash=3f9b7d853e407cc1159077ad82b0fb1d&dtoken=d41d8cd98f00b204e9800998ecf8427e&os=android&operator=1&tipo=t&usrtoken=APP123&hashtoken=aa2dd11aad8d9664a4cd9ac33b49caa9&device_id=7f3e54b720a6f34e&device_name=sdk_google_atv_x86&platform=android&appversion=1.3.1",
+							"protocol": "http",
+							"host": [
+								"api",
+								"tmwpix",
+								"com"
+							],
+							"path": [
+								"profiles"
+							],
+							"query": [
+								{
+									"key": "user",
+									"value": ""
+								},
+								{
+									"key": "time",
+									"value": "1657435701486"
+								},
+								{
+									"key": "hash",
+									"value": "3f9b7d853e407cc1159077ad82b0fb1d"
+								},
+								{
+									"key": "dtoken",
+									"value": "d41d8cd98f00b204e9800998ecf8427e"
+								},
+								{
+									"key": "os",
+									"value": "android"
+								},
+								{
+									"key": "operator",
+									"value": "1"
+								},
+								{
+									"key": "tipo",
+									"value": "t"
+								},
+								{
+									"key": "usrtoken",
+									"value": "APP123"
+								},
+								{
+									"key": "hashtoken",
+									"value": "aa2dd11aad8d9664a4cd9ac33b49caa9"
+								},
+								{
+									"key": "device_id",
+									"value": "7f3e54b720a6f34e"
+								},
+								{
+									"key": "device_name",
+									"value": "sdk_google_atv_x86"
+								},
+								{
+									"key": "platform",
+									"value": "android"
+								},
+								{
+									"key": "appversion",
+									"value": "1.3.1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "home",
+			"item": [
+				{
+					"name": "start background",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://api.tmwpix.com/anuncios/applista?device_id=7f3e54b720a6f34e&device_name=sdk_google_atv_x86&platform=android&appversion=1.3.1",
+							"protocol": "http",
+							"host": [
+								"api",
+								"tmwpix",
+								"com"
+							],
+							"path": [
+								"anuncios",
+								"applista"
+							],
+							"query": [
+								{
+									"key": "device_id",
+									"value": "7f3e54b720a6f34e"
+								},
+								{
+									"key": "device_name",
+									"value": "sdk_google_atv_x86"
+								},
+								{
+									"key": "platform",
+									"value": "android"
+								},
+								{
+									"key": "appversion",
+									"value": "1.3.1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "films",
+			"item": [
+				{
+					"name": "movies get category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://api.tmwpix.com/categories/movies?&user=&time=1657390028215&hash=6b44ce6d55fb47f49a08c4ed436be469&dtoken=d41d8cd98f00b204e9800998ecf8427e&os=android&operator=1&tipo=t&usrtoken=APP123&hashtoken=fc427b261087b109867e42961ca645ce&device_id=7f3e54b720a6f34e&device_name=sdk_google_atv_x86&platform=android&appversion=1.3.1",
+							"protocol": "http",
+							"host": [
+								"api",
+								"tmwpix",
+								"com"
+							],
+							"path": [
+								"categories",
+								"movies"
+							],
+							"query": [
+								{
+									"key": null,
+									"value": null
+								},
+								{
+									"key": "user",
+									"value": ""
+								},
+								{
+									"key": "time",
+									"value": "1657390028215"
+								},
+								{
+									"key": "hash",
+									"value": "6b44ce6d55fb47f49a08c4ed436be469"
+								},
+								{
+									"key": "dtoken",
+									"value": "d41d8cd98f00b204e9800998ecf8427e"
+								},
+								{
+									"key": "os",
+									"value": "android"
+								},
+								{
+									"key": "operator",
+									"value": "1"
+								},
+								{
+									"key": "tipo",
+									"value": "t"
+								},
+								{
+									"key": "usrtoken",
+									"value": "APP123"
+								},
+								{
+									"key": "hashtoken",
+									"value": "fc427b261087b109867e42961ca645ce"
+								},
+								{
+									"key": "device_id",
+									"value": "7f3e54b720a6f34e"
+								},
+								{
+									"key": "device_name",
+									"value": "sdk_google_atv_x86"
+								},
+								{
+									"key": "platform",
+									"value": "android"
+								},
+								{
+									"key": "appversion",
+									"value": "1.3.1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "movies fetch",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://api.tmwpix.com/movies/recents?appversion=1.3&user=&perfil=13349&infantil=1&time={{time}}&hash={{hash}}&dtoken={{dtoken}}&os={{os}}&operator=1&tipo=t&usrtoken={{usrtoken}}&hashtoken={{hashtoken}}",
+							"protocol": "http",
+							"host": [
+								"api",
+								"tmwpix",
+								"com"
+							],
+							"path": [
+								"movies",
+								"recents"
+							],
+							"query": [
+								{
+									"key": "appversion",
+									"value": "1.3"
+								},
+								{
+									"key": "user",
+									"value": ""
+								},
+								{
+									"key": "perfil",
+									"value": "13349"
+								},
+								{
+									"key": "infantil",
+									"value": "1"
+								},
+								{
+									"key": "time",
+									"value": "{{time}}"
+								},
+								{
+									"key": "hash",
+									"value": "{{hash}}"
+								},
+								{
+									"key": "dtoken",
+									"value": "{{dtoken}}"
+								},
+								{
+									"key": "os",
+									"value": "{{os}}"
+								},
+								{
+									"key": "operator",
+									"value": "1"
+								},
+								{
+									"key": "tipo",
+									"value": "t"
+								},
+								{
+									"key": "usrtoken",
+									"value": "{{usrtoken}}"
+								},
+								{
+									"key": "hashtoken",
+									"value": "{{hashtoken}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "fetch series",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "http://api.tmwpix.com/series?appversion=1.3&user={{user}}&infantil=1&time={{time}}&hash={{hash}}&dtoken={{dtoken}}&os=android&operator=1&tipo=t&usrtoken={{usrtoken}}&hashtoken={{hashtoken}}",
+							"protocol": "http",
+							"host": [
+								"api",
+								"tmwpix",
+								"com"
+							],
+							"path": [
+								"series"
+							],
+							"query": [
+								{
+									"key": "appversion",
+									"value": "1.3"
+								},
+								{
+									"key": "user",
+									"value": "{{user}}"
+								},
+								{
+									"key": "infantil",
+									"value": "1"
+								},
+								{
+									"key": "time",
+									"value": "{{time}}"
+								},
+								{
+									"key": "hash",
+									"value": "{{hash}}"
+								},
+								{
+									"key": "dtoken",
+									"value": "{{dtoken}}"
+								},
+								{
+									"key": "os",
+									"value": "android"
+								},
+								{
+									"key": "operator",
+									"value": "1"
+								},
+								{
+									"key": "tipo",
+									"value": "t"
+								},
+								{
+									"key": "usrtoken",
+									"value": "{{usrtoken}}"
+								},
+								{
+									"key": "hashtoken",
+									"value": "{{hashtoken}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "channels",
+			"item": [
+				{
+					"name": "get channels",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://api.tmwpix.com/channels3?user=&time=1657390028215&hash=6b44ce6d55fb47f49a08c4ed436be469&dtoken=d41d8cd98f00b204e9800998ecf8427e&os=android&operator=1&tipo=t&usrtoken=APP123&hashtoken=fc427b261087b109867e42961ca645ce&device_id=7f3e54b720a6f34e&device_name=sdk_google_atv_x86&platform=android&appversion=1.3.1",
+							"protocol": "http",
+							"host": [
+								"api",
+								"tmwpix",
+								"com"
+							],
+							"path": [
+								"channels3"
+							],
+							"query": [
+								{
+									"key": "user",
+									"value": ""
+								},
+								{
+									"key": "time",
+									"value": "1657390028215"
+								},
+								{
+									"key": "hash",
+									"value": "6b44ce6d55fb47f49a08c4ed436be469"
+								},
+								{
+									"key": "dtoken",
+									"value": "d41d8cd98f00b204e9800998ecf8427e"
+								},
+								{
+									"key": "os",
+									"value": "android"
+								},
+								{
+									"key": "operator",
+									"value": "1"
+								},
+								{
+									"key": "tipo",
+									"value": "t"
+								},
+								{
+									"key": "usrtoken",
+									"value": "APP123"
+								},
+								{
+									"key": "hashtoken",
+									"value": "fc427b261087b109867e42961ca645ce"
+								},
+								{
+									"key": "device_id",
+									"value": "7f3e54b720a6f34e"
+								},
+								{
+									"key": "device_name",
+									"value": "sdk_google_atv_x86"
+								},
+								{
+									"key": "platform",
+									"value": "android"
+								},
+								{
+									"key": "appversion",
+									"value": "1.3.1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "go channel",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://api.tmwpix.com/channels/nowplaying?id=1&perfis_id=13349&user=&time=1657390028215&hash=6b44ce6d55fb47f49a08c4ed436be469&dtoken=d41d8cd98f00b204e9800998ecf8427e&os=android&operator=1&tipo=t&usrtoken=APP123&hashtoken=fc427b261087b109867e42961ca645ce&page=tv&device_id=7f3e54b720a6f34e&device_name=sdk_google_atv_x86&platform=android&appversion=1.3.1",
+							"protocol": "http",
+							"host": [
+								"api",
+								"tmwpix",
+								"com"
+							],
+							"path": [
+								"channels",
+								"nowplaying"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								},
+								{
+									"key": "perfis_id",
+									"value": "13349"
+								},
+								{
+									"key": "user",
+									"value": ""
+								},
+								{
+									"key": "time",
+									"value": "1657390028215"
+								},
+								{
+									"key": "hash",
+									"value": "6b44ce6d55fb47f49a08c4ed436be469"
+								},
+								{
+									"key": "dtoken",
+									"value": "d41d8cd98f00b204e9800998ecf8427e"
+								},
+								{
+									"key": "os",
+									"value": "android"
+								},
+								{
+									"key": "operator",
+									"value": "1"
+								},
+								{
+									"key": "tipo",
+									"value": "t"
+								},
+								{
+									"key": "usrtoken",
+									"value": "APP123"
+								},
+								{
+									"key": "hashtoken",
+									"value": "fc427b261087b109867e42961ca645ce"
+								},
+								{
+									"key": "page",
+									"value": "tv"
+								},
+								{
+									"key": "device_id",
+									"value": "7f3e54b720a6f34e"
+								},
+								{
+									"key": "device_name",
+									"value": "sdk_google_atv_x86"
+								},
+								{
+									"key": "platform",
+									"value": "android"
+								},
+								{
+									"key": "appversion",
+									"value": "1.3.1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "series",
+			"item": [
+				{
+					"name": "seasondata",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://api.tmwpix.com/serie/seasons?serieid=46&user=&time=1657390028215&hash=6b44ce6d55fb47f49a08c4ed436be469&dtoken=d41d8cd98f00b204e9800998ecf8427e&os=android&operator=1&tipo=t&usrtoken=APP123&hashtoken=fc427b261087b109867e42961ca645ce&device_id=7f3e54b720a6f34e&device_name=sdk_google_atv_x86&platform=android&appversion=1.3.1",
+							"protocol": "http",
+							"host": [
+								"api",
+								"tmwpix",
+								"com"
+							],
+							"path": [
+								"serie",
+								"seasons"
+							],
+							"query": [
+								{
+									"key": "serieid",
+									"value": "46"
+								},
+								{
+									"key": "user",
+									"value": ""
+								},
+								{
+									"key": "time",
+									"value": "1657390028215"
+								},
+								{
+									"key": "hash",
+									"value": "6b44ce6d55fb47f49a08c4ed436be469"
+								},
+								{
+									"key": "dtoken",
+									"value": "d41d8cd98f00b204e9800998ecf8427e"
+								},
+								{
+									"key": "os",
+									"value": "android"
+								},
+								{
+									"key": "operator",
+									"value": "1"
+								},
+								{
+									"key": "tipo",
+									"value": "t"
+								},
+								{
+									"key": "usrtoken",
+									"value": "APP123"
+								},
+								{
+									"key": "hashtoken",
+									"value": "fc427b261087b109867e42961ca645ce"
+								},
+								{
+									"key": "device_id",
+									"value": "7f3e54b720a6f34e"
+								},
+								{
+									"key": "device_name",
+									"value": "sdk_google_atv_x86"
+								},
+								{
+									"key": "platform",
+									"value": "android"
+								},
+								{
+									"key": "appversion",
+									"value": "1.3.1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "serie userinfo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://api.tmwpix.com/user/info?user=&time=1657390028215&hash=6b44ce6d55fb47f49a08c4ed436be469&dtoken=d41d8cd98f00b204e9800998ecf8427e&os=android&operator=1&tipo=t&usrtoken=APP123&hashtoken=fc427b261087b109867e42961ca645ce&device_id=7f3e54b720a6f34e&device_name=sdk_google_atv_x86&platform=android&appversion=1.3.1",
+							"protocol": "http",
+							"host": [
+								"api",
+								"tmwpix",
+								"com"
+							],
+							"path": [
+								"user",
+								"info"
+							],
+							"query": [
+								{
+									"key": "user",
+									"value": ""
+								},
+								{
+									"key": "time",
+									"value": "1657390028215"
+								},
+								{
+									"key": "hash",
+									"value": "6b44ce6d55fb47f49a08c4ed436be469"
+								},
+								{
+									"key": "dtoken",
+									"value": "d41d8cd98f00b204e9800998ecf8427e"
+								},
+								{
+									"key": "os",
+									"value": "android"
+								},
+								{
+									"key": "operator",
+									"value": "1"
+								},
+								{
+									"key": "tipo",
+									"value": "t"
+								},
+								{
+									"key": "usrtoken",
+									"value": "APP123"
+								},
+								{
+									"key": "hashtoken",
+									"value": "fc427b261087b109867e42961ca645ce"
+								},
+								{
+									"key": "device_id",
+									"value": "7f3e54b720a6f34e"
+								},
+								{
+									"key": "device_name",
+									"value": "sdk_google_atv_x86"
+								},
+								{
+									"key": "platform",
+									"value": "android"
+								},
+								{
+									"key": "appversion",
+									"value": "1.3.1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "series info",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://api.tmwpix.com/serieinfo?id=46&user=&time=1657390028215&hash=6b44ce6d55fb47f49a08c4ed436be469&dtoken=d41d8cd98f00b204e9800998ecf8427e&os=android&operator=1&tipo=t&usrtoken=APP123&hashtoken=fc427b261087b109867e42961ca645ce&device_id=7f3e54b720a6f34e&device_name=sdk_google_atv_x86&platform=android&appversion=1.3.1",
+							"protocol": "http",
+							"host": [
+								"api",
+								"tmwpix",
+								"com"
+							],
+							"path": [
+								"serieinfo"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "46"
+								},
+								{
+									"key": "user",
+									"value": ""
+								},
+								{
+									"key": "time",
+									"value": "1657390028215"
+								},
+								{
+									"key": "hash",
+									"value": "6b44ce6d55fb47f49a08c4ed436be469"
+								},
+								{
+									"key": "dtoken",
+									"value": "d41d8cd98f00b204e9800998ecf8427e"
+								},
+								{
+									"key": "os",
+									"value": "android"
+								},
+								{
+									"key": "operator",
+									"value": "1"
+								},
+								{
+									"key": "tipo",
+									"value": "t"
+								},
+								{
+									"key": "usrtoken",
+									"value": "APP123"
+								},
+								{
+									"key": "hashtoken",
+									"value": "fc427b261087b109867e42961ca645ce"
+								},
+								{
+									"key": "device_id",
+									"value": "7f3e54b720a6f34e"
+								},
+								{
+									"key": "device_name",
+									"value": "sdk_google_atv_x86"
+								},
+								{
+									"key": "platform",
+									"value": "android"
+								},
+								{
+									"key": "appversion",
+									"value": "1.3.1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "fetch episode",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://api.tmwpix.com/serie/episodes?seasonid=75&user=&time=1657390028215&hash=6b44ce6d55fb47f49a08c4ed436be469&dtoken=d41d8cd98f00b204e9800998ecf8427e&os=android&operator=1&tipo=t&usrtoken=APP123&hashtoken=fc427b261087b109867e42961ca645ce&device_id=7f3e54b720a6f34e&device_name=sdk_google_atv_x86&platform=android&appversion=1.3.1",
+							"protocol": "http",
+							"host": [
+								"api",
+								"tmwpix",
+								"com"
+							],
+							"path": [
+								"serie",
+								"episodes"
+							],
+							"query": [
+								{
+									"key": "seasonid",
+									"value": "75"
+								},
+								{
+									"key": "user",
+									"value": ""
+								},
+								{
+									"key": "time",
+									"value": "1657390028215"
+								},
+								{
+									"key": "hash",
+									"value": "6b44ce6d55fb47f49a08c4ed436be469"
+								},
+								{
+									"key": "dtoken",
+									"value": "d41d8cd98f00b204e9800998ecf8427e"
+								},
+								{
+									"key": "os",
+									"value": "android"
+								},
+								{
+									"key": "operator",
+									"value": "1"
+								},
+								{
+									"key": "tipo",
+									"value": "t"
+								},
+								{
+									"key": "usrtoken",
+									"value": "APP123"
+								},
+								{
+									"key": "hashtoken",
+									"value": "fc427b261087b109867e42961ca645ce"
+								},
+								{
+									"key": "device_id",
+									"value": "7f3e54b720a6f34e"
+								},
+								{
+									"key": "device_name",
+									"value": "sdk_google_atv_x86"
+								},
+								{
+									"key": "platform",
+									"value": "android"
+								},
+								{
+									"key": "appversion",
+									"value": "1.3.1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "parseHLS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://mpix04.tmwpix.com:6000/series/batman_e_robin/1temporada/1/play.m3u8",
+							"protocol": "http",
+							"host": [
+								"mpix04",
+								"tmwpix",
+								"com"
+							],
+							"port": "6000",
+							"path": [
+								"series",
+								"batman_e_robin",
+								"1temporada",
+								"1",
+								"play.m3u8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "open episode",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://api.tmwpix.com/serie/episodeinfofull?id=950&perfis=13349&user=&time=1657390028215&hash=6b44ce6d55fb47f49a08c4ed436be469&dtoken=d41d8cd98f00b204e9800998ecf8427e&os=android&operator=1&tipo=t&usrtoken=APP123&hashtoken=fc427b261087b109867e42961ca645ce&device_id=7f3e54b720a6f34e&device_name=sdk_google_atv_x86&platform=android&appversion=1.3.1",
+							"protocol": "http",
+							"host": [
+								"api",
+								"tmwpix",
+								"com"
+							],
+							"path": [
+								"serie",
+								"episodeinfofull"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "950"
+								},
+								{
+									"key": "perfis",
+									"value": "13349"
+								},
+								{
+									"key": "user",
+									"value": ""
+								},
+								{
+									"key": "time",
+									"value": "1657390028215"
+								},
+								{
+									"key": "hash",
+									"value": "6b44ce6d55fb47f49a08c4ed436be469"
+								},
+								{
+									"key": "dtoken",
+									"value": "d41d8cd98f00b204e9800998ecf8427e"
+								},
+								{
+									"key": "os",
+									"value": "android"
+								},
+								{
+									"key": "operator",
+									"value": "1"
+								},
+								{
+									"key": "tipo",
+									"value": "t"
+								},
+								{
+									"key": "usrtoken",
+									"value": "APP123"
+								},
+								{
+									"key": "hashtoken",
+									"value": "fc427b261087b109867e42961ca645ce"
+								},
+								{
+									"key": "device_id",
+									"value": "7f3e54b720a6f34e"
+								},
+								{
+									"key": "device_name",
+									"value": "sdk_google_atv_x86"
+								},
+								{
+									"key": "platform",
+									"value": "android"
+								},
+								{
+									"key": "appversion",
+									"value": "1.3.1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "realize Aluguel",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://api.tmwpix.com/alugaserie?email=${usrData.usrinfo.email}&confirma=${confirmaAluguelValue}&cpf=${usrData.usrinfo.cpf}&cliente_id=${usrData.usrinfo.idCliente}&serie_id=${id}&user=${usrData.usr}&time=${usrData.time}&hash=${usrData.hash}&dtoken=${usrData.pass}&os=android&operator=1&tipo=${usrData.loginType}&usrtoken=${usrData.usrtoken}&hashtoken=${usrData.hashtoken}",
+							"protocol": "http",
+							"host": [
+								"api",
+								"tmwpix",
+								"com"
+							],
+							"path": [
+								"alugaserie"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "${usrData.usrinfo.email}"
+								},
+								{
+									"key": "confirma",
+									"value": "${confirmaAluguelValue}"
+								},
+								{
+									"key": "cpf",
+									"value": "${usrData.usrinfo.cpf}"
+								},
+								{
+									"key": "cliente_id",
+									"value": "${usrData.usrinfo.idCliente}"
+								},
+								{
+									"key": "serie_id",
+									"value": "${id}"
+								},
+								{
+									"key": "user",
+									"value": "${usrData.usr}"
+								},
+								{
+									"key": "time",
+									"value": "${usrData.time}"
+								},
+								{
+									"key": "hash",
+									"value": "${usrData.hash}"
+								},
+								{
+									"key": "dtoken",
+									"value": "${usrData.pass}"
+								},
+								{
+									"key": "os",
+									"value": "android"
+								},
+								{
+									"key": "operator",
+									"value": "1"
+								},
+								{
+									"key": "tipo",
+									"value": "${usrData.loginType}"
+								},
+								{
+									"key": "usrtoken",
+									"value": "${usrData.usrtoken}"
+								},
+								{
+									"key": "hashtoken",
+									"value": "${usrData.hashtoken}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "radios",
+			"item": [
+				{
+					"name": "fetch radio",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://api.tmwpix.com/radios?user=&time=1657390028215&hash=6b44ce6d55fb47f49a08c4ed436be469&dtoken=d41d8cd98f00b204e9800998ecf8427e&os=android&operator=1&tipo=t&usrtoken=APP123&hashtoken=fc427b261087b109867e42961ca645ce&device_id=7f3e54b720a6f34e&device_name=sdk_google_atv_x86&platform=android&appversion=1.3.1",
+							"protocol": "http",
+							"host": [
+								"api",
+								"tmwpix",
+								"com"
+							],
+							"path": [
+								"radios"
+							],
+							"query": [
+								{
+									"key": "user",
+									"value": ""
+								},
+								{
+									"key": "time",
+									"value": "1657390028215"
+								},
+								{
+									"key": "hash",
+									"value": "6b44ce6d55fb47f49a08c4ed436be469"
+								},
+								{
+									"key": "dtoken",
+									"value": "d41d8cd98f00b204e9800998ecf8427e"
+								},
+								{
+									"key": "os",
+									"value": "android"
+								},
+								{
+									"key": "operator",
+									"value": "1"
+								},
+								{
+									"key": "tipo",
+									"value": "t"
+								},
+								{
+									"key": "usrtoken",
+									"value": "APP123"
+								},
+								{
+									"key": "hashtoken",
+									"value": "fc427b261087b109867e42961ca645ce"
+								},
+								{
+									"key": "device_id",
+									"value": "7f3e54b720a6f34e"
+								},
+								{
+									"key": "device_name",
+									"value": "sdk_google_atv_x86"
+								},
+								{
+									"key": "platform",
+									"value": "android"
+								},
+								{
+									"key": "appversion",
+									"value": "1.3.1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "epg",
+			"item": [
+				{
+					"name": "get epgdata",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://api.tmwpix.com/channels/returnepgminnow?user=&time=1657390028215&hash=6b44ce6d55fb47f49a08c4ed436be469&dtoken=d41d8cd98f00b204e9800998ecf8427e&os=android&operator=1&tipo=t&usrtoken=APP123&hashtoken=fc427b261087b109867e42961ca645ce&device_id=7f3e54b720a6f34e&device_name=sdk_google_atv_x86&platform=android&appversion=1.3.1",
+							"protocol": "http",
+							"host": [
+								"api",
+								"tmwpix",
+								"com"
+							],
+							"path": [
+								"channels",
+								"returnepgminnow"
+							],
+							"query": [
+								{
+									"key": "user",
+									"value": ""
+								},
+								{
+									"key": "time",
+									"value": "1657390028215"
+								},
+								{
+									"key": "hash",
+									"value": "6b44ce6d55fb47f49a08c4ed436be469"
+								},
+								{
+									"key": "dtoken",
+									"value": "d41d8cd98f00b204e9800998ecf8427e"
+								},
+								{
+									"key": "os",
+									"value": "android"
+								},
+								{
+									"key": "operator",
+									"value": "1"
+								},
+								{
+									"key": "tipo",
+									"value": "t"
+								},
+								{
+									"key": "usrtoken",
+									"value": "APP123"
+								},
+								{
+									"key": "hashtoken",
+									"value": "fc427b261087b109867e42961ca645ce"
+								},
+								{
+									"key": "device_id",
+									"value": "7f3e54b720a6f34e"
+								},
+								{
+									"key": "device_name",
+									"value": "sdk_google_atv_x86"
+								},
+								{
+									"key": "platform",
+									"value": "android"
+								},
+								{
+									"key": "appversion",
+									"value": "1.3.1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get current time",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://api.tmwpix.com/channels/currentTimeNow",
+							"protocol": "http",
+							"host": [
+								"api",
+								"tmwpix",
+								"com"
+							],
+							"path": [
+								"channels",
+								"currentTimeNow"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "go to channel",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://api.tmwpix.com/channels3?user=&time=1657390028215&hash=6b44ce6d55fb47f49a08c4ed436be469&dtoken=d41d8cd98f00b204e9800998ecf8427e&os=android&operator=1&tipo=t&usrtoken=APP123&hashtoken=fc427b261087b109867e42961ca645ce&device_id=7f3e54b720a6f34e&device_name=sdk_google_atv_x86&platform=android&appversion=1.3.1",
+							"protocol": "http",
+							"host": [
+								"api",
+								"tmwpix",
+								"com"
+							],
+							"path": [
+								"channels3"
+							],
+							"query": [
+								{
+									"key": "user",
+									"value": ""
+								},
+								{
+									"key": "time",
+									"value": "1657390028215"
+								},
+								{
+									"key": "hash",
+									"value": "6b44ce6d55fb47f49a08c4ed436be469"
+								},
+								{
+									"key": "dtoken",
+									"value": "d41d8cd98f00b204e9800998ecf8427e"
+								},
+								{
+									"key": "os",
+									"value": "android"
+								},
+								{
+									"key": "operator",
+									"value": "1"
+								},
+								{
+									"key": "tipo",
+									"value": "t"
+								},
+								{
+									"key": "usrtoken",
+									"value": "APP123"
+								},
+								{
+									"key": "hashtoken",
+									"value": "fc427b261087b109867e42961ca645ce"
+								},
+								{
+									"key": "device_id",
+									"value": "7f3e54b720a6f34e"
+								},
+								{
+									"key": "device_name",
+									"value": "sdk_google_atv_x86"
+								},
+								{
+									"key": "platform",
+									"value": "android"
+								},
+								{
+									"key": "appversion",
+									"value": "1.3.1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "profiles",
+			"item": [
+				{
+					"name": "get profiles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://api.tmwpix.com/profiles?user=&time=1657390028215&hash=6b44ce6d55fb47f49a08c4ed436be469&dtoken=d41d8cd98f00b204e9800998ecf8427e&os=android&operator=1&tipo=t&usrtoken=APP123&hashtoken=fc427b261087b109867e42961ca645ce&device_id=7f3e54b720a6f34e&device_name=sdk_google_atv_x86&platform=android&appversion=1.3.1",
+							"protocol": "http",
+							"host": [
+								"api",
+								"tmwpix",
+								"com"
+							],
+							"path": [
+								"profiles"
+							],
+							"query": [
+								{
+									"key": "user",
+									"value": ""
+								},
+								{
+									"key": "time",
+									"value": "1657390028215"
+								},
+								{
+									"key": "hash",
+									"value": "6b44ce6d55fb47f49a08c4ed436be469"
+								},
+								{
+									"key": "dtoken",
+									"value": "d41d8cd98f00b204e9800998ecf8427e"
+								},
+								{
+									"key": "os",
+									"value": "android"
+								},
+								{
+									"key": "operator",
+									"value": "1"
+								},
+								{
+									"key": "tipo",
+									"value": "t"
+								},
+								{
+									"key": "usrtoken",
+									"value": "APP123"
+								},
+								{
+									"key": "hashtoken",
+									"value": "fc427b261087b109867e42961ca645ce"
+								},
+								{
+									"key": "device_id",
+									"value": "7f3e54b720a6f34e"
+								},
+								{
+									"key": "device_name",
+									"value": "sdk_google_atv_x86"
+								},
+								{
+									"key": "platform",
+									"value": "android"
+								},
+								{
+									"key": "appversion",
+									"value": "1.3.1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit profiles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://api.tmwpix.com/profiles?user=&time=1657390028215&hash=6b44ce6d55fb47f49a08c4ed436be469&dtoken=d41d8cd98f00b204e9800998ecf8427e&os=android&operator=1&tipo=t&usrtoken=APP123&hashtoken=fc427b261087b109867e42961ca645ce&device_id=7f3e54b720a6f34e&device_name=sdk_google_atv_x86&platform=android&appversion=1.3.1",
+							"protocol": "http",
+							"host": [
+								"api",
+								"tmwpix",
+								"com"
+							],
+							"path": [
+								"profiles"
+							],
+							"query": [
+								{
+									"key": "user",
+									"value": ""
+								},
+								{
+									"key": "time",
+									"value": "1657390028215"
+								},
+								{
+									"key": "hash",
+									"value": "6b44ce6d55fb47f49a08c4ed436be469"
+								},
+								{
+									"key": "dtoken",
+									"value": "d41d8cd98f00b204e9800998ecf8427e"
+								},
+								{
+									"key": "os",
+									"value": "android"
+								},
+								{
+									"key": "operator",
+									"value": "1"
+								},
+								{
+									"key": "tipo",
+									"value": "t"
+								},
+								{
+									"key": "usrtoken",
+									"value": "APP123"
+								},
+								{
+									"key": "hashtoken",
+									"value": "fc427b261087b109867e42961ca645ce"
+								},
+								{
+									"key": "device_id",
+									"value": "7f3e54b720a6f34e"
+								},
+								{
+									"key": "device_name",
+									"value": "sdk_google_atv_x86"
+								},
+								{
+									"key": "platform",
+									"value": "android"
+								},
+								{
+									"key": "appversion",
+									"value": "1.3.1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "remove profiles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://api.tmwpix.com/profiles?user=&time=1657390028215&hash=6b44ce6d55fb47f49a08c4ed436be469&dtoken=d41d8cd98f00b204e9800998ecf8427e&os=android&operator=1&tipo=t&usrtoken=APP123&hashtoken=fc427b261087b109867e42961ca645ce&device_id=7f3e54b720a6f34e&device_name=sdk_google_atv_x86&platform=android&appversion=1.3.1",
+							"protocol": "http",
+							"host": [
+								"api",
+								"tmwpix",
+								"com"
+							],
+							"path": [
+								"profiles"
+							],
+							"query": [
+								{
+									"key": "user",
+									"value": ""
+								},
+								{
+									"key": "time",
+									"value": "1657390028215"
+								},
+								{
+									"key": "hash",
+									"value": "6b44ce6d55fb47f49a08c4ed436be469"
+								},
+								{
+									"key": "dtoken",
+									"value": "d41d8cd98f00b204e9800998ecf8427e"
+								},
+								{
+									"key": "os",
+									"value": "android"
+								},
+								{
+									"key": "operator",
+									"value": "1"
+								},
+								{
+									"key": "tipo",
+									"value": "t"
+								},
+								{
+									"key": "usrtoken",
+									"value": "APP123"
+								},
+								{
+									"key": "hashtoken",
+									"value": "fc427b261087b109867e42961ca645ce"
+								},
+								{
+									"key": "device_id",
+									"value": "7f3e54b720a6f34e"
+								},
+								{
+									"key": "device_name",
+									"value": "sdk_google_atv_x86"
+								},
+								{
+									"key": "platform",
+									"value": "android"
+								},
+								{
+									"key": "appversion",
+									"value": "1.3.1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add profile",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "config",
+			"item": [
+				{
+					"name": "config start",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://api.tmwpix.com/user/info?user=&time=1657390028215&hash=6b44ce6d55fb47f49a08c4ed436be469&dtoken=d41d8cd98f00b204e9800998ecf8427e&os=android&operator=1&tipo=t&usrtoken=APP123&hashtoken=fc427b261087b109867e42961ca645ce&device_id=7f3e54b720a6f34e&device_name=sdk_google_atv_x86&platform=android&appversion=1.3.1",
+							"protocol": "http",
+							"host": [
+								"api",
+								"tmwpix",
+								"com"
+							],
+							"path": [
+								"user",
+								"info"
+							],
+							"query": [
+								{
+									"key": "user",
+									"value": ""
+								},
+								{
+									"key": "time",
+									"value": "1657390028215"
+								},
+								{
+									"key": "hash",
+									"value": "6b44ce6d55fb47f49a08c4ed436be469"
+								},
+								{
+									"key": "dtoken",
+									"value": "d41d8cd98f00b204e9800998ecf8427e"
+								},
+								{
+									"key": "os",
+									"value": "android"
+								},
+								{
+									"key": "operator",
+									"value": "1"
+								},
+								{
+									"key": "tipo",
+									"value": "t"
+								},
+								{
+									"key": "usrtoken",
+									"value": "APP123"
+								},
+								{
+									"key": "hashtoken",
+									"value": "fc427b261087b109867e42961ca645ce"
+								},
+								{
+									"key": "device_id",
+									"value": "7f3e54b720a6f34e"
+								},
+								{
+									"key": "device_name",
+									"value": "sdk_google_atv_x86"
+								},
+								{
+									"key": "platform",
+									"value": "android"
+								},
+								{
+									"key": "appversion",
+									"value": "1.3.1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "config getcobrancas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://api.tmwpix.com/user/cobrancas?user=&time=1657390028215&hash=6b44ce6d55fb47f49a08c4ed436be469&dtoken=d41d8cd98f00b204e9800998ecf8427e&os=android&operator=1&tipo=t&usrtoken=APP123&hashtoken=fc427b261087b109867e42961ca645ce&device_id=7f3e54b720a6f34e&device_name=sdk_google_atv_x86&platform=android&appversion=1.3.1",
+							"protocol": "http",
+							"host": [
+								"api",
+								"tmwpix",
+								"com"
+							],
+							"path": [
+								"user",
+								"cobrancas"
+							],
+							"query": [
+								{
+									"key": "user",
+									"value": ""
+								},
+								{
+									"key": "time",
+									"value": "1657390028215"
+								},
+								{
+									"key": "hash",
+									"value": "6b44ce6d55fb47f49a08c4ed436be469"
+								},
+								{
+									"key": "dtoken",
+									"value": "d41d8cd98f00b204e9800998ecf8427e"
+								},
+								{
+									"key": "os",
+									"value": "android"
+								},
+								{
+									"key": "operator",
+									"value": "1"
+								},
+								{
+									"key": "tipo",
+									"value": "t"
+								},
+								{
+									"key": "usrtoken",
+									"value": "APP123"
+								},
+								{
+									"key": "hashtoken",
+									"value": "fc427b261087b109867e42961ca645ce"
+								},
+								{
+									"key": "device_id",
+									"value": "7f3e54b720a6f34e"
+								},
+								{
+									"key": "device_name",
+									"value": "sdk_google_atv_x86"
+								},
+								{
+									"key": "platform",
+									"value": "android"
+								},
+								{
+									"key": "appversion",
+									"value": "1.3.1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "enable aluguel",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://api.tmwpix.com/user/updateAluguelBox?podealugar=1&user=&time={{time}}&hash={{hash}}&dtoken={{dtoken}}&os=android&operator={{operator}}&tipo={{tipo}}&usrtoken={{usrtoken}}&hashtoken={{hashtoken}}",
+							"protocol": "http",
+							"host": [
+								"api",
+								"tmwpix",
+								"com"
+							],
+							"path": [
+								"user",
+								"updateAluguelBox"
+							],
+							"query": [
+								{
+									"key": "podealugar",
+									"value": "1"
+								},
+								{
+									"key": "user",
+									"value": ""
+								},
+								{
+									"key": "time",
+									"value": "{{time}}"
+								},
+								{
+									"key": "hash",
+									"value": "{{hash}}"
+								},
+								{
+									"key": "dtoken",
+									"value": "{{dtoken}}"
+								},
+								{
+									"key": "os",
+									"value": "android"
+								},
+								{
+									"key": "operator",
+									"value": "{{operator}}"
+								},
+								{
+									"key": "tipo",
+									"value": "{{tipo}}"
+								},
+								{
+									"key": "usrtoken",
+									"value": "{{usrtoken}}"
+								},
+								{
+									"key": "hashtoken",
+									"value": "{{hashtoken}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "disable aluguel",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://api.tmwpix.com/user/updateAluguelBox?podealugar=0&user=&time={{time}}&hash={{time}}&dtoken={{dtoken}}&os=android&operator=1&tipo={{tipo}}&usrtoken={{usrtoken}}&hashtoken={{hashtoken}}",
+							"protocol": "http",
+							"host": [
+								"api",
+								"tmwpix",
+								"com"
+							],
+							"path": [
+								"user",
+								"updateAluguelBox"
+							],
+							"query": [
+								{
+									"key": "podealugar",
+									"value": "0"
+								},
+								{
+									"key": "user",
+									"value": ""
+								},
+								{
+									"key": "time",
+									"value": "{{time}}"
+								},
+								{
+									"key": "hash",
+									"value": "{{time}}"
+								},
+								{
+									"key": "dtoken",
+									"value": "{{dtoken}}"
+								},
+								{
+									"key": "os",
+									"value": "android"
+								},
+								{
+									"key": "operator",
+									"value": "1"
+								},
+								{
+									"key": "tipo",
+									"value": "{{tipo}}"
+								},
+								{
+									"key": "usrtoken",
+									"value": "{{usrtoken}}"
+								},
+								{
+									"key": "hashtoken",
+									"value": "{{hashtoken}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "movie",
+			"item": [
+				{
+					"name": "start",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://api.tmwpix.com/user/info?user=&time={{time}}&hash={{hash}}&dtoken={{dtoken}}&os=android&operator=1&tipo={{tipo}}&usrtoken={{usrtoken}}&hashtoken={{hashtoken}}",
+							"protocol": "http",
+							"host": [
+								"api",
+								"tmwpix",
+								"com"
+							],
+							"path": [
+								"user",
+								"info"
+							],
+							"query": [
+								{
+									"key": "user",
+									"value": ""
+								},
+								{
+									"key": "time",
+									"value": "{{time}}"
+								},
+								{
+									"key": "hash",
+									"value": "{{hash}}"
+								},
+								{
+									"key": "dtoken",
+									"value": "{{dtoken}}"
+								},
+								{
+									"key": "os",
+									"value": "android"
+								},
+								{
+									"key": "operator",
+									"value": "1"
+								},
+								{
+									"key": "tipo",
+									"value": "{{tipo}}"
+								},
+								{
+									"key": "usrtoken",
+									"value": "{{usrtoken}}"
+								},
+								{
+									"key": "hashtoken",
+									"value": "{{hashtoken}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "start 2",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://api.tmwpix.com/movieinfofull?appversion=1.3&id=1228&perfis=13349&user=&time=1657435701486&hash=3f9b7d853e407cc1159077ad82b0fb1d&dtoken=d41d8cd98f00b204e9800998ecf8427e&os=android&operator=1&tipo=t&usrtoken=APP123&hashtoken=aa2dd11aad8d9664a4cd9ac33b49caa9&device_id=7f3e54b720a6f34e&device_name=sdk_google_atv_x86&platform=android&appversion=1.3.1",
+							"protocol": "http",
+							"host": [
+								"api",
+								"tmwpix",
+								"com"
+							],
+							"path": [
+								"movieinfofull"
+							],
+							"query": [
+								{
+									"key": "appversion",
+									"value": "1.3"
+								},
+								{
+									"key": "id",
+									"value": "1228"
+								},
+								{
+									"key": "perfis",
+									"value": "13349"
+								},
+								{
+									"key": "user",
+									"value": ""
+								},
+								{
+									"key": "time",
+									"value": "1657435701486"
+								},
+								{
+									"key": "hash",
+									"value": "3f9b7d853e407cc1159077ad82b0fb1d"
+								},
+								{
+									"key": "dtoken",
+									"value": "d41d8cd98f00b204e9800998ecf8427e"
+								},
+								{
+									"key": "os",
+									"value": "android"
+								},
+								{
+									"key": "operator",
+									"value": "1"
+								},
+								{
+									"key": "tipo",
+									"value": "t"
+								},
+								{
+									"key": "usrtoken",
+									"value": "APP123"
+								},
+								{
+									"key": "hashtoken",
+									"value": "aa2dd11aad8d9664a4cd9ac33b49caa9"
+								},
+								{
+									"key": "device_id",
+									"value": "7f3e54b720a6f34e"
+								},
+								{
+									"key": "device_name",
+									"value": "sdk_google_atv_x86"
+								},
+								{
+									"key": "platform",
+									"value": "android"
+								},
+								{
+									"key": "appversion",
+									"value": "1.3.1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "start 3",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://api.tmwpix.com/ticket?idconteudo=1228&cliente_id=14685&tipoconteudo=filmes&perfis=13349&user=&time=1657435701486&hash=3f9b7d853e407cc1159077ad82b0fb1d&dtoken=d41d8cd98f00b204e9800998ecf8427e&os=android&operator=1&tipo=t&usrtoken=APP123&hashtoken=aa2dd11aad8d9664a4cd9ac33b49caa9&device_id=7f3e54b720a6f34e&device_name=sdk_google_atv_x86&platform=android&appversion=1.3.1",
+							"protocol": "http",
+							"host": [
+								"api",
+								"tmwpix",
+								"com"
+							],
+							"path": [
+								"ticket"
+							],
+							"query": [
+								{
+									"key": "idconteudo",
+									"value": "1228"
+								},
+								{
+									"key": "cliente_id",
+									"value": "14685"
+								},
+								{
+									"key": "tipoconteudo",
+									"value": "filmes"
+								},
+								{
+									"key": "perfis",
+									"value": "13349"
+								},
+								{
+									"key": "user",
+									"value": ""
+								},
+								{
+									"key": "time",
+									"value": "1657435701486"
+								},
+								{
+									"key": "hash",
+									"value": "3f9b7d853e407cc1159077ad82b0fb1d"
+								},
+								{
+									"key": "dtoken",
+									"value": "d41d8cd98f00b204e9800998ecf8427e"
+								},
+								{
+									"key": "os",
+									"value": "android"
+								},
+								{
+									"key": "operator",
+									"value": "1"
+								},
+								{
+									"key": "tipo",
+									"value": "t"
+								},
+								{
+									"key": "usrtoken",
+									"value": "APP123"
+								},
+								{
+									"key": "hashtoken",
+									"value": "aa2dd11aad8d9664a4cd9ac33b49caa9"
+								},
+								{
+									"key": "device_id",
+									"value": "7f3e54b720a6f34e"
+								},
+								{
+									"key": "device_name",
+									"value": "sdk_google_atv_x86"
+								},
+								{
+									"key": "platform",
+									"value": "android"
+								},
+								{
+									"key": "appversion",
+									"value": "1.3.1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "start 4",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://mpix04.tmwpix.com:9210/filmes/as_aventuras_de_gui_e_estopa_filme_hd_por20/play.m3u8?device_id=7f3e54b720a6f34e&device_name=sdk_google_atv_x86&platform=android&appversion=1.3.1",
+							"protocol": "http",
+							"host": [
+								"mpix04",
+								"tmwpix",
+								"com"
+							],
+							"port": "9210",
+							"path": [
+								"filmes",
+								"as_aventuras_de_gui_e_estopa_filme_hd_por20",
+								"play.m3u8"
+							],
+							"query": [
+								{
+									"key": "device_id",
+									"value": "7f3e54b720a6f34e"
+								},
+								{
+									"key": "device_name",
+									"value": "sdk_google_atv_x86"
+								},
+								{
+									"key": "platform",
+									"value": "android"
+								},
+								{
+									"key": "appversion",
+									"value": "1.3.1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "time",
+			"value": "1657390028215"
+		},
+		{
+			"key": "hash",
+			"value": "6b44ce6d55fb47f49a08c4ed436be469"
+		},
+		{
+			"key": "dtoken",
+			"value": "d41d8cd98f00b204e9800998ecf8427e"
+		},
+		{
+			"key": "os",
+			"value": "android"
+		},
+		{
+			"key": "hashtoken",
+			"value": "fc427b261087b109867e42961ca645ce"
+		},
+		{
+			"key": "usrtoken",
+			"value": "APP123"
+		},
+		{
+			"key": "tipo",
+			"value": "t"
+		},
+		{
+			"key": "operator",
+			"value": "1"
+		}
+	]
+}

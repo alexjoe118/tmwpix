@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <title>TMWPIX</title>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="TMWPIX" name="description" />
+    <meta content="" name="keywords" />
+    <meta content="" name="author" />
+    <!-- CSS Files
+    ================================================== -->
+    <link id="bootstrap" href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link id="font" href="fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body style="background: url(./img/img-background3.png); background-size: 100% 100%;">
+    <div id="serie-container" class="px-1 pb-5 bg-cover">
+        <!-- header begin -->
+        <header class="">
+            <div class="p-3 d-flex align-items-center justify-content-between">
+                <div class="back_btn_container d-flex justify-content-start">
+                    <a href="#" onclick="" class="back_btn"><i class="fa fa-3x fa-angle-left"></i></a>
+                </div>
+
+                <a href="#">
+                    <img src="./img/logotmwpix.png" width="200" height="50" class="logo-img">
+                </a>
+
+            </div>
+        </header>
+        <!-- header close -->
+        <!-- content begin -->
+        <div class="serie-content mt-2 px-1">
+            <div class="d-flex justify-content-center">
+                <div class="serie-header d-flex justify-content-start">
+                    <div class="d-flex">
+                        <div class="temporades">Temporadas</div>
+                        <div class="session">3</div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center">
+                <div class="serie-content-container d-flex justify-content-between">
+                    <img src="./img/movies/1054.jpg"/>
+                    <div class="serie_desc_content text-center">
+                        <div class="description_title">
+                            Descrição
+                        </div>
+                        <div class="description_content">
+                            Um pai antiquado e sua filha, uma cineasta experiente em tecnologia, viajam para uma nova faculdade enquanto tentam se adaptar. A jornada é interrompida por um apocalipse que ameaça separar esses heróis se eles não se unirem e encontrarem uma maneira de salvar a humanidade.
+                        </div>
+                    </div>
+                    <div class="serie_episode_content d-flex flex-column">
+                        <button class="episode_button" data-bs-toggle="modal"
+                        data-bs-target="#lease_details">Episódio 1</button>
+                        <button class="episode_button" data-bs-toggle="modal"
+                        data-bs-target="#confirm_aluguel_episodio">Episódio 2</button>
+                        <button class="episode_button" data-bs-toggle="modal"
+                        data-bs-target="#confirm_aluguel_no_episodio">Episódio 3</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="lease_details" tabindex="-1" aria-labelledby="Detalhes da locação" aria-hidden="true">
+            <div class="modal-dialog custom_modal">
+                <div class="modal-content">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="text-white modalTitle">Detalhes da locação</div>
+                        <div class="close_modal" data-bs-dismiss="modal" aria-label="Close">X Fechar</div>
+                    </div>
+                    
+                    <div class="text-white text-start" style="font-size: 17px;">
+                        <div class="serie_aluguel"> ALUGUE ESTA SÉRIE OU ESTE EPISÓDIO</div>
+                    </div>
+
+                    <div class="text-white d-flex align-items-center justify-content-between" style="font-size: 18px;">
+                        <div class="">CANCELAR</div>
+                        <div class="">ALUGAR</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="confirm_aluguel_episodio" tabindex="-1" aria-labelledby="Search films" aria-hidden="true">
+            <div class="modal-dialog custom_modal">
+                <div class="modal-content">
+                    <div class="d-flex justify-content-end align-items-center">
+                        <div class="close_modal" data-bs-dismiss="modal" aria-label="Close">X Fechar</div>
+                    </div>
+                    
+                    <div class="rental_details_container text-center text-white fw-bold p-2">
+                        <div>ALUGUE ESTE FILME</div>
+                        <div class="text-decoration-underline" id="rental_details_film_name">A Família Mitchell e a Rebelião das Máquinas</div>
+                        <div>ALUGUE E ASSISTA AGORA MESMO POR&nbsp;<span style="color: #00b200;">R$&nbsp;<span class="rental_details_pre_rent">14,90</span></span></div>
+                        <div>O FILME ESTARÁ DISPONÍVEL POR 48 HORAS</div>
+                    </div>
+
+                    <div class="text-white text-start">
+                        <div>Termos:</div>
+                        Ao continuar, você cliente TMWPIX concorda que o valor R$&nbsp;
+                        <span class="rental_details_pre_rent">14,90</span> será
+                        adicionado na sua próxima cobrança ou fatura a pagar. Após
+                        confirmação do aluguel, o filme estará disponível por 48
+                        horas exatamente. Não haverá reembolso do valor ou extensão
+                        do tempo de disponibilidade em situação alguma.
+                    </div>
+
+                    <div class="d-flex justify-content-between modal_footer_container">
+                        <div class="rental_details_cancel" data-bs-dismiss="modal">CANCELAR</div>
+                        <div class="rental_details_hire">ALUGAR</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="confirm_aluguel_no_episodio" tabindex="-1" aria-labelledby="Search films" aria-hidden="true">
+            <div class="modal-dialog custom_modal">
+                <div class="modal-content">
+                    <div class="d-flex justify-content-end align-items-center">
+                        <div class="close_modal" data-bs-dismiss="modal" aria-label="Close">X Fechar</div>
+                    </div>
+                    
+                    <div class="rental_details_container text-center text-white fw-bold p-2">
+                        <div>ALUGUE E ASSISTA AGORA MESMO DE</div>
+                        <div class="text-decoration-underline" id="rental_details_film_name">A Família Mitchell e a Rebelião das Máquinas</div>
+                        <div>ALUGUE E ASSISTA AGORA MESMO POR&nbsp;<span style="color: #00b200;">R$&nbsp;<span class="rental_details_pre_rent">14,90</span></span></div>
+                        <div>O FILME ESTARÁ DISPONÍVEL POR 48 HORAS</div>
+                    </div>
+
+                    <div class="text-white text-start">
+                        <div>Termos:</div>
+                        Ao continuar, você cliente TMWPIX concorda que o valor R$&nbsp;
+                        <span class="rental_details_pre_rent">14,90</span> será
+                        adicionado na sua próxima cobrança ou fatura a pagar. Após
+                        confirmação do aluguel, o filme estará disponível por 48
+                        horas exatamente. Não haverá reembolso do valor ou extensão
+                        do tempo de disponibilidade em situação alguma.
+                    </div>
+
+                    <div class="d-flex justify-content-between modal_footer_container">
+                        <div class="rental_details_cancel" data-bs-dismiss="modal">CANCELAR</div>
+                        <div class="rental_details_hire">ALUGAR</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Javascript Files
+    ================================================== -->
+    <script src="js/plugins.js"></script>
+
+    <script>
+       
+    </script>
+</body>
+
+</html>

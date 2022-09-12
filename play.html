@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <title>TMWPIX</title>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="TMWPIX" name="description" />
+    <meta content="" name="keywords" />
+    <meta content="" name="author" />
+    <!-- CSS Files
+    ================================================== -->
+    <link id="bootstrap" href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link id="font" href="fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div id="player-container" class="">
+
+        <video controls disablePictureInPicture controlslist=" nofullscreen nodownload noremoteplayback noplaybackrate foobar">
+            <source src="https://www.w3schools.com/html/mov_bbb.mp4
+            " type="video/mp4">
+        </video>
+
+        <div class="custom_controllers">
+            <img src="./icons/ic_audio@2x.png" class="audio_controller" data-bs-toggle="modal"
+            data-bs-target="#audio_select_modal"></i>
+            <img src="./icons/ic_subtitles@2x.png" class="subtitle_controller" data-bs-toggle="modal"
+            data-bs-target="#legend_select_modal"></i>
+            <img src="./icons/ic_resolution@2x.png" class="resolution_controller" data-bs-toggle="modal"
+            data-bs-target="#resolution_select_modal"></i>
+        </div>
+        <div class="modal fade" id="audio_select_modal" tabindex="-1" aria-labelledby="Selecionar audio" aria-hidden="true">
+            <div class="modal-dialog custom_modal">
+                <div class="modal-content">
+                    <div class="d-flex justify-content-between">
+                        <div class="text-white">Selecionar audio</div>
+                        <div class="close_modal" data-bs-dismiss="modal" aria-label="Close">X Fechar</div>
+                    </div>
+                    <div class="select_container">
+                        <div class="search_label text-start open" onclick="select_audio()" id="audio_select_label">
+                            <span id="selected_audio">category 1</span>&nbsp;-&nbsp;Selecionado
+                        </div>
+                        <div class="category_container collapse" id="audio_container">
+                            <div class="category_item">
+                                category 1
+                            </div>
+                            <div class="category_item">
+                                category 2
+                            </div>
+                            <div class="category_item">
+                                category 3
+                            </div>
+                            <div class="category_item">
+                                category 4
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="legend_select_modal" tabindex="-1" aria-labelledby="Selecionar legenda" aria-hidden="true">
+            <div class="modal-dialog custom_modal">
+                <div class="modal-content">
+                    <div class="d-flex justify-content-between">
+                        <div class="text-white">Selecionar legenda</div>
+                        <div class="close_modal" data-bs-dismiss="modal" aria-label="Close">X Fechar</div>
+                    </div>
+                    <div class="select_container">
+                        <div class="search_label text-start open" onclick="select_legend()" id="legend_select_label">
+                            <span id="selected_legenda">legenda 1</span>&nbsp;-&nbsp;Selecionado
+                        </div>
+                        <div class="category_container collapse" id="legenda_container">
+                            <div class="category_item">
+                                legenda 1
+                            </div>
+                            <div class="category_item">
+                                legenda 2
+                            </div>
+                            <div class="category_item">
+                                legenda 3
+                            </div>
+                            <div class="category_item">
+                                legenda 4
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="resolution_select_modal" tabindex="-1" aria-labelledby="Selecionar resolução" aria-hidden="true">
+            <div class="modal-dialog custom_modal">
+                <div class="modal-content">
+                    <div class="d-flex justify-content-between">
+                        <div class="text-white">Selecionar resolução</div>
+                        <div class="close_modal" data-bs-dismiss="modal" aria-label="Close">X Fechar</div>
+                    </div>
+                    <div class="select_container">
+                        <div class="search_label text-start open" onclick="select_resolution()" id="resolution_select_label">
+                            <span id="selected_resolution">resolução 1</span>&nbsp;-&nbsp;Selecionado
+                        </div>
+                        <div class="category_container collapse" id="resolution_container">
+                            <div class="category_item">
+                                resolução 1
+                            </div>
+                            <div class="category_item">
+                                resolução 2
+                            </div>
+                            <div class="category_item">
+                                resolução 3
+                            </div>
+                            <div class="category_item">
+                                resolução 4
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Javascript Files
+    ================================================== -->
+    <script src="js/plugins.js"></script>
+    <script>
+        const userToken = JSON.parse(window.localStorage.getItem('LOGGED_USR'));
+        if (userToken == null) {
+            window.location.href = "./login.html";
+        }
+        const movieData = JSON.parse(window.localStorage.getItem('g_movieData'));
+        console.log(movieData.movies[0].url);
+        $(".movie_src").attr("src", movieData.movies[0].url);
+
+    </script>
+
+    <script>
+        function select_audio() {
+            $("#audio_container").collapse("toggle");
+        }
+        function select_legend() {
+            $("#legenda_container").collapse("toggle");
+        }
+        function select_resolution() {
+            $("#resolution_container").collapse("toggle");
+        }
+        $('.category_item').click(function () {
+            $(this).parent().parent().find('span').html($(this).html());
+            $(this).parent().collapse("hide");
+        })
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <title>TMWPIX</title>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="TMWPIX" name="description" />
+    <meta content="" name="keywords" />
+    <meta content="" name="author" />
+    <!-- CSS Files
+    ================================================== -->
+    <link id="bootstrap" href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="login_body">
+    <div class="min-vh-100 d-flex flex-column justify-content-center align-items-center" id="login_container">
+        <img src="./img/logotmwpix.png" width="200" height="50" class="logo-img">
+
+        <div class="d-flex flex-column">
+            <input id="token" class="custom_input" placeholder="Token de login">
+            <button class="custom_button btn_log" onclick="onLog()">Logar</button>
+            <button class="custom_button btn_regist" onclick="onRegist()">Cadastro</button>
+        </div>
+
+        <div class="text-center text-white">
+            Entre em contato com a TMW Telecom pelos fones: <br>0800 648 3961
+            <br>(51) 3656 7200
+        </div>
+
+    </div>
+
+    <!-- Javascript Files
+    ================================================== -->
+    <script src="js/plugins.js"></script>
+    <script src="js/md5.min.js"></script>
+
+    <script>
+        function onLog() {
+            var loginType = "token";
+            var token = $("#token").val();
+            var usr = "";
+            var pass = "";
+            var hashtoken = "";
+            var link = "";
+            var date = new Date();
+            var time = date.getTime();
+            pass = md5(pass);
+            var hash = md5(`${time}*${pass}`);
+            link = `http://api.tmwpix.com/profiles?user=${usr}&time=${time}&hash=${hash}&dtoken=${pass}&os=android&operator=1`;
+            if (loginType === 'token') {
+                hashtoken = md5(`${time}*${token}`);
+                link = `${link}&tipo=t&usrtoken=${token}&hashtoken=${hashtoken}`;
+            }
+            // link = "http://api.tmwpix.com/profiles?user=&time=1657390028215&hash=6b44ce6d55fb47f49a08c4ed436be469&dtoken=d41d8cd98f00b204e9800998ecf8427e&os=android&operator=1&tipo=t&usrtoken=APP123&hashtoken=fc427b261087b109867e42961ca645ce'";
+            console.log(link);
+            $.ajax({
+                url: link,
+                type: 'GET',
+                dataType: 'json',
+                success: function (result) {
+                    if (result.hasOwnProperty('error')) {
+                        alert(result['error']['message']);
+                    } else {
+                        var object = {
+                            usr,
+                            pass,
+                            time,
+                            hash,
+                            usrtoken: token,
+                            hashtoken,
+                            loginType: loginType === 'token' ? 't' : '',
+                            client_id: result['client_id'],
+                            profile: 0,
+                            usrinfo: { PodeAlugar: 1 },
+                        }
+
+                        window.localStorage.setItem('LOGGED_USR', JSON.stringify(object));
+                        // console.log(JSON.stringify(object));
+                        window.location.href = "./profiles.html"
+                    }
+                },
+                error: function (xhr, status, error) {
+                    alert(`Error ${error}`);
+                },
+
+            });
+        }
+        function onRegist() {
+            window.location.href = "./register.html";
+        }
+    </script>
+</body>
+
+</html>

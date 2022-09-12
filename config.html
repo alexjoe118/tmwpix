@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <title>TMWPIX</title>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="TMWPIX" name="description" />
+    <meta content="" name="keywords" />
+    <meta content="" name="author" />
+    <!-- CSS Files
+    ================================================== -->
+    <link id="bootstrap" href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link id="font" href="fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div id="config-container" class="px-1 pb-5">
+        <!-- header begin -->
+        <header class="">
+            <div class="p-3 d-flex align-items-center justify-content-between">
+                <div class="back_btn_container d-flex justify-content-start">
+                    <a href="#" onclick="" class="back_btn"><i class="fa fa-3x fa-angle-left"></i></a>
+                </div>
+
+                <a href="#">
+                    <img src="./img/logotmwpix.png" width="200" height="50" class="logo-img">
+                </a>
+            </div>
+        </header>
+        <!-- header close -->
+        <!-- content begin -->
+        <div class="mt-2 d-flex justify-content-center">
+            <div
+                class="config-content d-flex flex-column justify-content-center align-items-center text-white text-center">
+                <div class="fw-bold">
+                    Nome: <span class="fw-normal config_name">Desenvolvimento APP-STB</span>
+                </div>
+                <div class="fw-bold">
+                    Endereço: <span class="fw-normal config_address"></span>
+                </div>
+                <div class="fw-bold">
+                    E-mail: <span class="fw-normal config_email"></span>
+                </div>
+                <div class="fw-bold">
+                    Plano: <span class="fw-normal config_plan">TMWPIX Top HD</span>
+                </div>
+                <div class="fw-bold">
+                    Alugueis grátis restantes nesse mês: <span class="fw-normal config_free_rentals">0</span>
+                </div>
+                <button class="config-btn" onclick="window.location.href='./profiles.html'">Perfis</button>
+                <button class="config-btn" data-bs-toggle="modal" data-bs-target="#control_remove">Controle
+                    Remoto</button>
+                <!-- <button class="config-btn">Desconectar Controle Remoto</button> -->
+                <button class="config-btn" onclick="logout()">Sair da
+                    conta</button>
+                <!-- <button class="config-btn">Desabilitar opção de aluguel</button> -->
+                <button class="config-btn aluguel_title" data-bs-toggle="modal" data-bs-target="#confirm_operation">Reabilitar opção
+                    de aluguel</button>
+                <div style="font-size: 16px;">Dispositivo:b5eedd35ed1029b9</div>
+            </div>
+        </div>
+        <div class="modal fade" id="confirm_operation" tabindex="-1" aria-labelledby="Confirmar operação"
+            aria-hidden="true">
+            <div class="modal-dialog custom_modal">
+                <div class="modal-content">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="text-white">Confirmar operação</div>
+                        <div class="close_modal" data-bs-dismiss="modal" aria-label="Close">X Fechar</div>
+                    </div>
+                    <div class="text-secondary text-start">
+                        Para prosseguir com essa ação, por favor digite sua senha ou token de acesso
+                    </div>
+                    <div class="p-2">
+                        <input class="text-center token_RC token_confirm" placeholder="Digite seu token ou senha" />
+                    </div>
+                    <div class="text-start text-secondary" style="font-size: 16px;">(solicitamos essa confirmação para
+                        não haver nenhuma engano)</div>
+
+                    <div class="d-flex justify-content-end">
+                        <div class="confirm_btn" onclick="onConfirm()" data-bs-dismiss="modal" aria-label="Close">
+                            CONFIRMAR
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="modal fade" id="control_remove" tabindex="-1" aria-labelledby="Controle Remoto" aria-hidden="true">
+            <div class="modal-dialog custom_modal">
+                <div class="modal-content">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="text-white"> </div>
+                        <div class="close_modal" data-bs-dismiss="modal" aria-label="Close">X Fechar</div>
+                    </div>
+                    <div class="text-secondary text-start fw-bold ">
+                        Digite o código de seis dígitos da TV:
+                    </div>
+                    <div class="mt-2">
+                        <input class="w-100 token_RC text-center" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Javascript Files
+    ================================================== -->
+        <script src="js/plugins.js"></script>
+        <script>
+            var userToken = JSON.parse(window.localStorage.getItem('LOGGED_USR'));
+            var objectToken = {};
+            if(userToken == null){
+                window.location.href = "./login.html";
+            }
+            var link = `http://api.tmwpix.com/user/info?user=${userToken.usr}&time=${userToken.time}&hash=${userToken.hash}&dtoken=${userToken.pass}&os=android&operator=1&tipo=${userToken.loginType}&usrtoken=${userToken.usrtoken}&hashtoken=${userToken.hashtoken}`;
+            $.ajax({
+                url: link,
+                type: 'GET',
+                dataType: 'json',
+                success: function (result) {
+                    if (result.hasOwnProperty('error')) {
+                        alert(result['error']['message']);
+                        window.location.href = "./login.html";
+                    } else {
+                        console.log(result[0]);
+                        objectToken = result[0];
+                        setInterface(result[0]);
+                    }
+                },
+                error: function (xhr, status, error) {
+                    alert(`Error ${error}`);
+                },
+
+            });
+            console.log("userToken", userToken);
+            function setInterface(userInfo) {
+                $(".config_name").html(userInfo.name);
+                $(".config_address").html(userInfo.address);
+                $(".config_email").html(userInfo.email);
+                $(".config_plan").html(userInfo.Plano.replace('Plano ', ''));
+
+                $(".config_free_rentals").html(userInfo.AluguelGratisRestante);
+            }
+            function logout() {
+                var link2 = `http://api.tmwpix.com/user/logout?user=${userToken.usr}&time=${userToken.time}&hash=${userToken.hash}&dtoken=${userToken.pass}&os=android&operator=1&tipo=${userToken.loginType}&usrtoken=${userToken.usrtoken}&hashtoken=${userToken.hashtoken}`;
+                $.ajax({
+                    url: link2,
+                    type: 'GET',
+                    dataType: 'json',
+                    success: function (result) {
+                        if (result.hasOwnProperty('error')) {
+                            alert(result['error']['message']);
+                            window.location.href = "./login.html";
+                        } else {
+                            window.localStorage.removeItem('LOGGED_USR');
+                            window.location.href = "./login.html";
+
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        alert(`Error ${error}`);
+                    },
+                });
+
+            }
+            if (userToken.usrinfo.PodeAlugar == 1) {
+                $(".aluguel_title").html("Desabilitar opção de aluguel");
+            } else {
+                $(".aluguel_title").html("Reabilitar opção de aluguel");
+            }
+            function onConfirm() {
+                userToken = JSON.parse(window.localStorage.getItem('LOGGED_USR'));
+                console.log(objectToken.Token);
+                if ($(".token_confirm").val().toUpperCase() == objectToken.Token.toUpperCase()) {
+                    if (userToken.usrinfo.PodeAlugar == 1) {
+                        disableAluguel();
+                    } else {
+                        enableAluguel();
+                    }
+                }
+                if (userToken.usrinfo.PodeAlugar == 1) {
+                    $(".aluguel_title").html("Desabilitar opção de aluguel");
+                } else {
+                    $(".aluguel_title").html("Reabilitar opção de aluguel");
+                }
+                window.localStorage.setItem('LOGGED_USR', JSON.stringify(userToken));
+
+            }
+            function enableAluguel() {
+                userToken.usrinfo.PodeAlugar = 1;
+                var link3 = `http://api.tmwpix.com/user/updateAluguelBox?podealugar=1&user=${userToken.usr}&time=${userToken.time}&hash=${userToken.hash}&dtoken=${userToken.pass}&os=android&operator=1&tipo=${userToken.loginType}&usrtoken=${userToken.usrtoken}&hashtoken=${userToken.hashtoken}`;
+                $.ajax({
+                    url: link3,
+                    type: 'GET',
+                    dataType: 'json',
+                    success: function (result) {
+                        if (result.hasOwnProperty('error')) {
+                            alert(result['error']['message']);
+                            window.location.href = "./login.html";
+                        } else {
+
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        alert(`Error ${error}`);
+                    },
+                });
+
+            }
+            function disableAluguel() {
+                userToken.usrinfo.PodeAlugar = 0;
+                var link3 = `http://api.tmwpix.com/user/updateAluguelBox?podealugar=0&user=${userToken.usr}&time=${userToken.time}&hash=${userToken.hash}&dtoken=${userToken.pass}&os=android&operator=1&tipo=${userToken.loginType}&usrtoken=${userToken.usrtoken}&hashtoken=${userToken.hashtoken}`;
+                $.ajax({
+                    url: link3,
+                    type: 'GET',
+                    dataType: 'json',
+                    success: function (result) {
+                        if (result.hasOwnProperty('error')) {
+                            alert(result['error']['message']);
+                            window.location.href = "./login.html";
+                        } else {
+
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        alert(`Error ${error}`);
+                    },
+                });
+
+            }
+
+        </script>
+
+        <script>
+
+        </script>
+</body>
+
+</html>
